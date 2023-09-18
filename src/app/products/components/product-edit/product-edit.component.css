@@ -1,0 +1,15 @@
+mat-form-field {
+  display: block;
+}
+
+.actions {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions > button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}

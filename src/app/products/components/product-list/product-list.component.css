@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.product-card {
+  max-width: 400px;
+  padding: 20px;
+  margin: 20px;
+  box-sizing: border-box;
+}

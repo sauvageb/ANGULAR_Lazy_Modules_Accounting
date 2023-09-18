@@ -1,0 +1,51 @@
+<div *ngIf="product">
+  <h2>Edit Product : {{product.id}}</h2>
+
+  <div class="container">
+    <mat-card class="product-card mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title>
+          <div>{{product.id}}</div>
+        </mat-card-title>
+      </mat-card-header>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput style="width: 100%"
+                    [value]="product.description"
+                    cdkAutosizeMinRows="5"
+                    cdkTextareaAutosize
+                    cdkAutosizeMaxRows="35"></textarea>
+        </mat-form-field>
+      </div>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input type="number" matInput [formControl]="priceFormControl" placeholder="100€">
+        <mat-error *ngIf="priceFormControl.hasError('min') && !priceFormControl.hasError('required')">
+          Please enter a valid price
+        </mat-error>
+        <mat-error *ngIf="priceFormControl.hasError('required')">
+          Price is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>TVA</mat-label>
+        <mat-select [value]="product.tva">
+          <mat-option [value]="product.tva" *ngFor="let tva of tvaRates$ | async">{{tva.rate}} ({{tva.label}})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <div class="actions">
+        <button mat-raised-button color="primary">
+          Edit
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

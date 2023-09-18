@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import {CustomersRoutingModule} from './customers-routing.module';
+import {CustomerListComponent} from './components/customer-list/customer-list.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
   ],
   imports: [
     CommonModule,
-    CustomersRoutingModule
+    CustomersRoutingModule,
+    SharedModule
   ]
 })
-export class CustomersModule { }
+export class CustomersModule {
+}
